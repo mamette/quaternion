@@ -1,4 +1,3 @@
-//#include <AHRS.h>
 #include <Wire.h> //The I2C library
 #include <Servo.h>
 #include <math.h>
@@ -264,7 +263,7 @@ void loop() {
   
   calculateSection();
   
-  AHRSupdate();
+  madgwickAHRSupdate();
   GetEuler();
    
  
@@ -405,7 +404,7 @@ void GetEuler(void){
 
 }
 
-void AHRSupdate() {
+void madgwickAHRSupdate() {
 
   static float gx;
   static float gy;
